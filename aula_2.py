@@ -48,7 +48,34 @@ print(f"A soma dos dias, horas, minutos, segundos em segundos é: {ssegs}")
 salario = float(input("Escreva o valor do seu salário: "))
 aumento = float(input("Escreva o valor da porcentagem de aumento (apenas numeros): "))
 aumentamento = (aumento * salario)/100
-aumentado = ((aumento * salario)/100) + salario
+aumentado = aumentamento + salario
 print(f"O aumento do seu salário foi de R$ {aumentamento} somado com o atual resulta em R$ {aumentado}")
 
-#
+#8. Faça um programa que solicite o preço de uma mercadoria e o percentual de desconto.
+# Exiba o valor do desconto e o preço a pagar.
+
+preco = float(input("Escreva o valor do produto: "))
+percentual = float(input("Escreva o valor percentual do desconto a ser aplicado (apenas numeros): "))
+desconto = (preco * percentual)/100
+valorf = preco - desconto
+
+print(f"O valor do desconto é igual a R$ {desconto} o que resulta no valor final de {valorf:.2f}")
+
+#9. Escreva um programa que calcule o tempo de uma viagem de carro.
+# Pergunte a distância a percorrer e a velocidade média esperada para a viagem.
+
+d = float(input("Digite a distância a percorrer: "))
+vm = float(input("Digite a velociade média do veiculo: "))
+tempo = d/vm
+
+print(f"O tempo estimado para percorrer o percurso com essa velociadade é de {tempo:.2f}")
+
+#10. Escreva um programa que converta uma temperatura digitada em ºC em ºF.
+# A fórmula para essa conversão é F = ((9 x C) / 5) + 32
+
+C = float(input("Digite a temperatura em Celcius: "))
+F = ((9 * C) / 5) + 32
+
+print(f"A temperatura {C}ºC convertida em ºF é {F}ºF")
+
+
