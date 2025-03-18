@@ -39,15 +39,16 @@ dias = int(input("Escreva a quantidade de dias: "))
 horas = int(input("Escreva a quantidade de horas: "))
 minutos = int(input("Escreva a quantidade de minutos: "))
 segundos = int(input("Escreva a quantidade de segundos: "))
-
-print("A soma dos dias, horas, minutos, segundos em segundos é: ", (dias * 86400) + (horas * 3600) + (minutos * 60) + segundos)
+ssegs = (dias * 86400) + (horas * 3600) + (minutos * 60) + segundos
+print(f"A soma dos dias, horas, minutos, segundos em segundos é: {ssegs}")
 
 #7. Faça um programa que calcule o aumento de um salário. Ele deve solicitar o valor do salário e a
 # porcentagem do aumento. Exiba o valor do aumento e do novo salário.
 
 salario = float(input("Escreva o valor do seu salário: "))
 aumento = float(input("Escreva o valor da porcentagem de aumento (apenas numeros): "))
-
-print("O aumento do seu salário foi de R$", ((aumento * salario)/100), "somado com o atual resulta em R$", ((aumento * salario)/100) + salario)
+aumentamento = (aumento * salario)/100
+aumentado = ((aumento * salario)/100) + salario
+print(f"O aumento do seu salário foi de R$ {aumentamento} somado com o atual resulta em R$ {aumentado}")
 
 #
