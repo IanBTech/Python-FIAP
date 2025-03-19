@@ -64,11 +64,11 @@ print(f"O valor do desconto é igual a R$ {desconto} o que resulta no valor fina
 #9. Escreva um programa que calcule o tempo de uma viagem de carro.
 # Pergunte a distância a percorrer e a velocidade média esperada para a viagem.
 
-d = float(input("Digite a distância a percorrer: "))
-vm = float(input("Digite a velociade média do veiculo: "))
+d = float(input("Digite a distância a percorrer em km: "))
+vm = float(input("Digite a velociade média do veiculo em h: "))
 tempo = d/vm
 
-print(f"O tempo estimado para percorrer o percurso com essa velociadade é de {tempo:.2f}")
+print(f"O tempo estimado para percorrer o percurso com essa velociadade é de {tempo:.2f} horas")
 
 #10. Escreva um programa que converta uma temperatura digitada em ºC em ºF.
 # A fórmula para essa conversão é F = ((9 x C) / 5) + 32
@@ -78,4 +78,28 @@ F = ((9 * C) / 5) + 32
 
 print(f"A temperatura {C}ºC convertida em ºF é {F}ºF")
 
+#11. Escreva um programa que pergunte a quantidade de km percorridos por um carro alugado pelo usuário,
+# assim como a quantidade de dias pelos quais o carro foi alugado.
+# Calcule o preço a pagar, sabendo que o carro custa R$60 por dia e R$0,15 por km rodado.
 
+km = float(input("Digite quantos km foram percorridos: "))
+periodo = int(input("Digite o periodo de dias que o carro foi alugado: "))
+pagamento = float(km * 0.15) + float(periodo * 60)
+
+print(f"o pagamento a ser realizado por utilizar durante {periodo} dias e percorrer {km} km é de  R$ {pagamento:.2f}")
+
+#12. Escreva um programa que receba 2 valores do tipo inteiro x e y, e calcule o valor de z: z = (x2 + y2) / (x – y)2
+
+x = int(input("Escreva um numero inteiro: "))
+y = int(input("Escreva outro numero inteiro: "))
+z = ((x * x) + (y * y)) / ((x - y) * (x - y))
+
+print(f"De acordo com a formula z = (x² + y²) / (x – y)² o resultado de z obitido foi de {z}")
+
+#13. Escreva um programa que receba o salário de um funcionário (float) e retorne o resultado
+# do novo salário com reajuste de 35%.
+
+salario1 = float(input("Digite o valor do seu salario: "))
+reajuste = (salario1 * 35)/100
+
+print(f"O seu salario com reajuste de 35% é de {reajuste:.2f}")
