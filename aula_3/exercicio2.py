@@ -5,19 +5,27 @@ num1 = int(input('Escreva um numero: '))
 num2 = int(input('Escreva um numero: '))
 num3 = int(input('Escreva um numero: '))
 if num1 > num2 > num3:
-    print(num1)
-else:
-    if num1 > num3 > num2:
-        print(num1)
-    else:
-        if num2 > num1 > num3:
-            print(num2)
-        else:
-            if num2 > num3 > num1:
-                print(num2)
-            else:
-                if num3 > num2 > num1:
-                    print(num3)
-                else:
-                    if num3 > num1 > num2:
-                        print(num3)
+    print(f'o maior número é {num1}')
+if num1 > num3 > num2:
+    print(f'o maior número é {num1}')
+if num2 > num1 > num3:
+    print(f'o maior número é {num2}')
+if num2 > num3 > num1:
+    print(f'o maior número é {num2}')
+if num3 > num2 > num1:
+    print(f'o maior número é {num3}')
+if num3 > num1 > num2:
+    print(f'o maior número é {num3}')
+
+if num1 > num2 > num3:
+    print(f'o menor número é {num3}')
+if num1 > num3 > num2:
+    print(f'o menor número é {num2}')
+if num2 > num1 > num3:
+    print(f'o menor número é {num3}')
+if num2 > num3 > num1:
+    print(f'o menor número é {num1}')
+if num3 > num2 > num1:
+    print(f'o menor número é {num1}')
+if num3 > num1 > num2:
+    print(f'o menor número é {num2}')
