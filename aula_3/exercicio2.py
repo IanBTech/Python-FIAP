@@ -4,6 +4,7 @@
 num1 = int(input('Escreva um numero: '))
 num2 = int(input('Escreva um numero: '))
 num3 = int(input('Escreva um numero: '))
+
 if num1 > num2 > num3:
     print(f'o maior número é {num1}')
 if num1 > num3 > num2:
