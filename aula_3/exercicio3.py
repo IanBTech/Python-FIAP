@@ -6,6 +6,6 @@ salario = float(input('Digite seu salário: '))
 calculo1 = ((salario * 10)/100) + salario
 calculo2 = ((salario * 15)/100) + salario
 if salario > 1250:
-    print(calculo1)
+    print(f'R$ {calculo1:.2f}')
 else:
-    print(calculo2)
+    print(f'R$ {calculo2:.2f}')
