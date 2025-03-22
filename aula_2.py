@@ -9,7 +9,8 @@ print("Meu nome é Ian Batinga Barbosa")
 a = 3
 b = 5
 equacao = ((2 * a) * (3 * b))
-print(equacao)
+print('2a x 3b')
+print(f'(2 x {a}) x (3 x {b}) = {equacao}')
 
 #3. Escreva um programa que calcule a soma de três variáveis e imprima o resultado na tela.
 
@@ -17,7 +18,7 @@ a1 = 6
 a2 = 9
 a3 = 1
 soma = (a1 + a2 + a3)
-print(soma)
+print(f'{a1} + {a2} + {a3} = {soma}')
 
 #4. Faça um programa que peça dois números inteiros. Imprima a soma desses dois números na tela
 
