@@ -13,4 +13,4 @@ s4 = segundos
 
 soma = s1 + s2 + s3 + s4
 
-print("o valor em segundos é:", soma)
+print(f"o valor da soma dos tempos em segundos é: {soma}")
