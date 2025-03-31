@@ -16,7 +16,6 @@ else:
     print("Algo de errado não está certo.")
 
 #menor número
-
 if num1 <= num2 and num1 <= num3:
     print(f'o menor número é {num1}')
 elif num2 <= num1 and num2 <= num3:
