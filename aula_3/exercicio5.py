@@ -15,4 +15,4 @@ elif operacao == '*':
 elif operacao == '/':
     print(f'{num1} / {num2} = {num1 / num2}')
 else:
-    print(f'operação invalida, digite apenas (+), (-), (/), (*).')
+    print(f'operação invalida, digite um número válido e utilize apenas (+), (-), (/), (*).')
