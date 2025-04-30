@@ -2,6 +2,6 @@
 # múltiplos de 3.
 
 x = 3
-while x <= 9:
+while x <= 30:
     print(x)
     x += 3
