@@ -5,10 +5,12 @@
 
 V = [9,8,7,12,0,13,21]
 P = []
-p = []
+I = []
 
-for p in range (0,30,2):
-    if V == p:
-        P.append(p)
-
-print(P)
+for e in V:
+    if e % 2 == 0:
+        P.append(e)
+    else:
+        I.append(e)
+print("Pares: ",P)
+print("Impares: ",I)
