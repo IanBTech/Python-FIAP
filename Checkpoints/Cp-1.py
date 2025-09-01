@@ -7,6 +7,7 @@
 # A média final seja exibida com 1 casa decimal.
 
 # Cálculo da média final (descarta menor CP; (2 CP + 2 Sprint)/4 = 40%; GS = 60%)
+
 listanotas = []  # médias dos 2 semestres
 
 for sem in range(2):
