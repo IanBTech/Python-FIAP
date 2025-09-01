@@ -4,21 +4,30 @@
 # efetue a baixa no estoque.
 
 estoque = {"tomate": [1000, 2.3], "alface": [500, 0.45], "batata": [2001, 1.2], "feijão": [100, 1.5]}
+venda = []
 
-produto = input("Digite o produto: ")
-vendido = int(input("Digite o venda: "))
-venda = [[produto, vendido]]
+while True:
+    produto = input("Digite o produto e fim para sair: ").lower()
+    if produto == "fim":
+        break
+    if produto not in estoque:
+        print("Produto não existe no estoque")
 
-total = 0
-for operacao in venda:
-    produto, quantidade = operacao
-    preco = estoque[produto][1]
-    custo = preco * quantidade
-    print(f"{produto}: {quantidade} x {preco} = {custo}")
-    estoque[produto][0] -= quantidade
-    total += custo
+    else:
+        vendido = int(input("Digite a quantidade vendida: "))
+        venda = [[produto, vendido]]
 
-print(f"Custo total: {total}")
+    total = 0
+
+    for operacao in venda:
+        produto, quantidade = operacao
+        preco = estoque[produto][1]
+        custo = preco * quantidade
+        print(f"{produto}: {quantidade} x {preco} = {custo}")
+        estoque[produto][0] -= quantidade
+        total += custo
+
+    print(f"Custo total: {total}")
 
 for chave, dados in estoque.items():
     print("Descrição: ", chave)
