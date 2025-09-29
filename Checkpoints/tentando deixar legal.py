@@ -1,6 +1,5 @@
- # Dupla: Ian Batinga Barbosa / Giovanna Carmona Roman Lopes
-# Programa que cadastra alunos, valida notas de cada semestre,
-# descarta a menor nota de checkpoint e calcula a média final
+# Dupla: Ian Batinga Barbosa / Giovanna Carmona Roman Lopes
+
 # Fórmula: (2 CP + 2 Sprint)/4 = 40% + GS = 60%
 
 alunos = []  # lista de alunos cadastrados
