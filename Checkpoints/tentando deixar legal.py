@@ -2,27 +2,28 @@
 
 # Fórmula: (2 CP + 2 Sprint)/4 = 40% + GS = 60%
 
-alunos = []  # lista de alunos cadastrados
-
-while True:
+alunos = []
+alunos_cadastrados = 0
+while alunos_cadastrados < 1:
     print("\n--- Cadastro de Aluno ---")
     nome = input("Nome: ")
     matricula = input("Matrícula: ")
-    curso = input("Curso: ")
-    turno = input("Turno: ")
+    disciplina = input("Disciplina: ")
     turma = input("Turma: ")
+    frequencia = float(input("Frequência em porcentagem: "))
+    alunos_cadastrados += 1
 
-    medias_semestres = []  # armazenará as médias dos dois semestres
+    medias_semestres = []
 
-    for semestre in range(1, 3):  # 2 semestres
+    for semestre in range(1, 3):
         print(f"\n--- SEMESTRE {semestre} ---")
         checkpoints = []
         sprints = []
 
-        # Ler 3 CPs (0..10)
+        # Ler 3 CPs
         for numero_cp in range(3):
             while True:
-                entrada_usuario = input(f"CP{numero_cp + 1} (0..10): ")
+                entrada_usuario = input(f"CP{numero_cp + 1} (de 0 a 10): ")
                 entrada_valida, pontos, digitos = (len(entrada_usuario) > 0), 0, 0
 
                 if entrada_valida:
@@ -42,10 +43,10 @@ while True:
                         break
                 print("Inválido. Digite número entre 0 e 10 (use ponto).")
 
-        # Ler 2 Sprints (0..10)
+        # Ler 2 Sprints
         for numero_sprint in range(2):
             while True:
-                entrada_usuario = input(f"Sprint{numero_sprint + 1} (0..10): ")
+                entrada_usuario = input(f"Sprint{numero_sprint + 1} (de 0 a 10): ")
                 entrada_valida, pontos, digitos = (len(entrada_usuario) > 0), 0, 0
 
                 if entrada_valida:
@@ -65,9 +66,9 @@ while True:
                         break
                 print("Inválido. Digite número entre 0 e 10 (use ponto).")
 
-        # Ler GS (0..10)
+        # Ler GS
         while True:
-            entrada_usuario = input("GS (0..10): ")
+            entrada_usuario = input("GS (de 0 a 10): ")
             entrada_valida, pontos, digitos = (len(entrada_usuario) > 0), 0, 0
 
             if entrada_valida:
@@ -104,23 +105,27 @@ while True:
     # Cálculo da média final do aluno
     media_final = medias_semestres[0] * 0.4 + medias_semestres[1] * 0.6
 
+    # analise da frequencia
+    situacao_final = ()
+    if frequencia >= 75 and media_final >= 6:
+        situacao_final = "aprovado"
+    elif frequencia >= 75 and 6 > media_final >= 4:
+        situacao_final = "de exame"
+    else:
+        situacao_final = "reprovado"
+
     aluno = {
         "nome": nome,
         "matricula": matricula,
-        "curso": curso,
-        "turno": turno,
+        "disciplina": disciplina,
         "turma": turma,
         "medias_semestres": medias_semestres,
-        "media_final": media_final
+        "media_final": media_final,
+        "frequencia": frequencia
     }
     alunos.append(aluno)
 
-    # Pergunta se deseja continuar
-    continuar = input("\nCadastrar outro aluno? (s/n): ").lower()
-    if continuar != "s":
-        break
-
-# Menu de edição de alunos
+# Menu de edição de aluno
 while True:
     print("\n--- MENU DE EDIÇÃO ---")
     print("1 - Alterar aluno")
@@ -136,9 +141,10 @@ while True:
                 encontrado = True
                 print(f"Editando aluno: {a['nome']}")
                 a["nome"] = input(f"Novo nome ({a['nome']}): ") or a["nome"]
-                a["curso"] = input(f"Novo curso ({a['curso']}): ") or a["curso"]
+                a["disciplina"] = input(f"Nova disciplina ({a['disciplina']}): ") or a["disciplina"]
                 a["turno"] = input(f"Novo turno ({a['turno']}): ") or a["turno"]
                 a["turma"] = input(f"Nova turma ({a['turma']}): ") or a["turma"]
+                a["frequencia"] = input(f"Nova frequencia ({a['frequencia']}): ") or a["frequencia"]
                 print("Dados alterados com sucesso!")
                 break
         if not encontrado:
@@ -161,8 +167,11 @@ while True:
 
 # Exibe relatório final
 print("\n--- RELATÓRIO DE ALUNOS ---")
+print("Obs: Caso sua média esteja abaixo de 6 ou sua frequência menor que 75%, você está reprovado. Caso sua média esteja"
+      "\nentre 6 e 4, você está de exame. Caso esteja abaixo de 4, você está reprovado.")
 for a in alunos:
-    print(f"Nome: {a['nome']} | Matrícula: {a['matricula']} | Curso: {a['curso']} | Turno: {a['turno']} | Turma: {a['turma']}")
-    print(f"Médias: Sem1={a['medias_semestres'][0]:.1f} | Sem2={a['medias_semestres'][1]:.1f}")
+    print(f"\nNome: {a['nome']} | Matrícula: {a['matricula']} | Disciplina: {a['disciplina']} | Turma: {a['turma']}")
+    print(f"Médias: Semestre 1 = {a['medias_semestres'][0]:.1f} | Semestre 2 = {a['medias_semestres'][1]:.1f}")
     print(f"MÉDIA FINAL: {a['media_final']:.1f}")
+    print(f"Situação Final: {situacao_final}")
     print("-" * 40)
